@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> <!-- Define a codificação de caracteres para UTF-8 -->
+		<title>Cadastro de Veículos</title> <!-- Título da página exibido na aba do navegador -->
+		<link rel="stylesheet" type="text/css" href="styles.css"/> <!-- Link para o arquivo de estilo CSS -->
+	</head>
+	<body>
+		<div class="container"> <!-- Div que contém todo o conteúdo da página -->
+			<div class="header"> <!-- Cabeçalho da página -->
+				<h3>Cadastre seu veículo para vender muito mais rápido!</h3> <!-- Mensagem de incentivo -->
+			</div>
+			<div class="form-container"> <!-- Container para o formulário de cadastro -->
+				<div class="form-header"> <!-- Cabeçalho do formulário -->
+					<p>Cadastro</p> <!-- Título do formulário -->
+				</div>
+				<div class="form-body"> <!-- Corpo do formulário -->
+					<h1 class="form-title">Venda fácil seu veículo</h1> <!-- Título principal do formulário -->
+					<p>Descreva as características do seu veículo e marque todas as opcionais e características que ele possui</p> <!-- Instruções para o usuário -->
+					<form> <!-- Início do formulário -->
+						<div class="box-input"> <!-- Caixa de entrada para o título do anúncio -->
+							<label for="title">Título do anúncio: 
+								<span class="required-field">*</span> <!-- Indica que o campo é obrigatório -->
+							</label>
+							<input type="text" name="title" id="title" class="block" placeholder="Defina um título para seu veículo" minlength="1" maxlength="30" required> <!-- Campo de texto para o título -->
+
+							<input type="submit" class="btn-submit" value="Cadastrar"> <!-- Botão de envio -->
+						</div>
+						<div class="box-input"> <!-- Caixa de entrada para o preço do veículo -->
+							<label for="price">Preço do Veículo:
+								<span class="required-field">*</span> <!-- Campo obrigatório -->
+							</label>
+							<input type="number" id="price" name="price" class="block" required> <!-- Campo numérico para o preço -->
+						</div>
+						<div class="box-input"> <!-- Caixa de entrada para a descrição -->
+							<label for="descricao">Descrição: 
+								<span class="required-field">*</span> <!-- Campo obrigatório -->
+							</label>
+							<textarea id="description" name="description" class="block" cols="30" rows="10" required placeholder="Descreva seu veículo"></textarea> <!-- Área de texto para a descrição -->
+						</div>
+						<div class="box-input"> <!-- Caixa de entrada para verificar se o veículo teve um único dono -->
+							<label for="unique_owner">Único dono? 
+								<span class="required-field">*</span> <!-- Campo obrigatório -->
+							</label>
+							<select id="unique_owner" name="unique_owner" required> <!-- Menu suspenso para selecionar se o veículo é de único dono -->
+								<option value="">Selecione...</option> <!-- Opção padrão -->
+								<option value="1">Sim</option> <!-- Opção para sim -->
+								<option value="0">Não</option> <!-- Opção para não -->
+							</select>
+						</div>
+						<div class="box-input"> <!-- Caixa de entrada para a marca do veículo -->
+							<label for="brand">Marca: 
+								<span class="required-field">*</span> <!-- Campo obrigatório -->
+							</label>
+							<input type="text" name="brand" id="brand" class="block" placeholder="Digite a marca de seu veículo" required> <!-- Campo de texto para a marca -->
+						</div>
+						<div class="box-input"> <!-- Caixa de entrada para o modelo do veículo -->
+							<label for="model">Modelo: 
+								<span class="required-field">*</span> <!-- Campo obrigatório -->
+							</label>
+							<input type="text" name="model" id="model" class="block" placeholder="Digite o modelo de seu veículo" required> <!-- Campo de texto para o modelo -->
+						</div>
+						<div class="box-input"> <!-- Caixa de entrada para a quilometragem -->
+							<label for="mileage">Quilometragem: 
+								<span class="required-field">*</span> <!-- Campo obrigatório -->
+							</label>
+							<input type="number" name="mileage" id="mileage" class="block" required> <!-- Campo numérico para a quilometragem -->
+						</div>
+						<div class="box-input"> <!-- Caixa de entrada para a data de compra -->
+							<label for="purchase_date">Data de compra do veículo: 
+								<span class="required-field">*</span> <!-- Campo obrigatório -->
+							</label>
+							<input type="date" name="purchase_date" id="purchase_date" class="block" required> <!-- Campo para selecionar a data de compra -->
+						</div>
+						<div class="box-input"> <!-- Opções para o tipo de câmbio -->
+							<p>Câmbio: <span class="required-field">*</span></p>
+							<input type="radio" id="manual" name="gear"> <!-- Botão de rádio para câmbio manual -->
+							<label for="manual">Manual</label>
+							<input type="radio" id="auto" name="gear"> <!-- Botão de rádio para câmbio automático -->
+							<label for="auto">Automático</label>
+						</div>
+						<div class="optional_box"> <!-- Caixa para opcionais do veículo -->
+							<p>Opcionais:</p>
+							<ul class="optional_list"> <!-- Lista de opcionais -->
+								<li>
+									<input type="checkbox" id="airbag" name="optional[]" value="airbag"> <!-- Checkbox para airbag -->
+									<label for="airbag">Airbag</label>
+								</li>
+								<li>
+									<input type="checkbox" id="alarm" name="optional[]" value="alarm"> <!-- Checkbox para alarme -->
+									<label for="alarm">Alarme</label>
+								</li>
+								<li>
+									<input type="checkbox" id="ac" name="optional[]" value="ac"> <!-- Checkbox para ar-condicionado -->
+									<label for="ac">Ar-condicionado</label>
+								</li>
+								<li>
+									<input type="checkbox" id="eletric_lock" name="optional[]" value="eletric_lock"> <!-- Checkbox para trava elétrica -->
+									<label for="eletric_lock">Trava elétrica</label>
+								</li>
+							</ul>
+						</div>
+						<div class="optional_box"> <!-- Outra caixa para opcionais -->
+							<ul class="optional_list"> <!-- Lista de opcionais -->
+								<li>
+									<input type="checkbox" id="eletric_window" name="optional[]" value="eletric_window"> <!-- Checkbox para vidro elétrico -->
+									<label for="airbag">Vidro elétrico</label> <!-- Label com id errado, deveria ser "eletric_window" -->
+								</li>
+								<li>
+									<input type="checkbox" id="speakers" name="optional[]" value="speakers"> <!-- Checkbox para som -->
+									<label for="speakers">Som</label>
+								</li>
+								<li>
+									<input type="checkbox" id="reverse_camera" name="optional[]" value="reverse_camera"> <!-- Checkbox para câmera de ré -->
+									<label for="reverse_camera">Câmera de Ré</label>
+								</li>
+								<li>
+									<input type="checkbox" id="leather_seat" name="optional[]" value="leather_seat"> <!-- Checkbox para banco de couro -->
+									<label for="leather_seat">Banco de Couro</label>
+								</li>
+							</ul>
+						</div>
+						<div class="box-input"> <!-- Caixa para envio de imagens -->
+							<p>Envie imagens do veículo: <span class="required-field">*</span></p>
+							<input type="file" multiple accept="image/png, image/jpeg" id="images" name="images" required> <!-- Campo para upload de imagens -->
+						</div>
+						<input type="submit" class="btn-submit" value="Cadastrar"> <!-- Botão de envio do formulário -->
+					</form> <!-- Fim do formulário -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
